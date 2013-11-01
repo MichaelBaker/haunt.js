@@ -53,4 +53,10 @@ describe("haunt", function() {
       expect(haunt.reverseWord("Meat is healthy", "murder")).toEqual("Meat is healthy")
     })
   })
+
+  describe("dropElement", function() {
+    it("moves the given text down on the page", function() {
+      expect(haunt.dropElement("This is some text to drop")).toEqual("<span style='display: inline-block; position: relative; top: 10px'>This is some text to drop</span>")
+    })
+  })
 })
