@@ -59,4 +59,10 @@ describe("haunt", function() {
       expect(haunt.dropElement("This is some text to drop")).toEqual("<span style='display: inline-block; position: relative; top: 10px'>This is some text to drop</span>")
     })
   })
+
+  describe("raiseElement", function() {
+    it("moves the given text up on the page", function() {
+      expect(haunt.raiseElement("This is some text to drop")).toEqual("<span style='display: inline-block; position: relative; bottom: 10px'>This is some text to drop</span>")
+    })
+  })
 })
