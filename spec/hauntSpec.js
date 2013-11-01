@@ -19,6 +19,10 @@ describe("haunt", function() {
       expect(haunt.getOut("hello get.")).toEqual("hello get out.")
     })
 
+    it("replaces only one 'get'", function() {
+      expect(haunt.getOut("hello get get.")).toEqual("hello get out get.")
+    })
+
     describe("getOut with text styling", function() {
       it("would create a span with class with the word", function() {
         expect(haunt.getOut("get my sandwich", "spooky-word")).toEqual("<span class='spooky-word'>get out</span> my sandwich")
@@ -29,6 +33,24 @@ describe("haunt", function() {
   describe("styledGetOut", function() {
     it("adds an inline style to the text to make it ~spooky~", function() {
         expect(haunt.styledGetOut("get my sandwich")).toContain("style")
+    })
+  })
+
+  describe("reverseWord", function() {
+    it("reverses a given word", function() {
+        expect(haunt.reverseWord("Meat is murder", "murder")).toEqual("Meat is redrum")
+    })
+
+    it("doesn't reverse a string that has the word embed in another word", function() {
+        expect(haunt.reverseWord("Meat is hellmurderyo", "murder")).toEqual("Meat is hellredrumyo")
+    })
+
+    it("reverses only one word", function() {
+      expect(haunt.reverseWord("Meat is murder murder", "murder")).toEqual("Meat is redrum murder")
+    })
+
+    it("does nothing when word does not exist", function() {
+      expect(haunt.reverseWord("Meat is healthy", "murder")).toEqual("Meat is healthy")
     })
   })
 })

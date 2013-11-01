@@ -9,8 +9,12 @@
       window.onload = function() {
         var paragraph = document.getElementById("first-get-out")
         paragraph.innerHTML = haunt.styledGetOut(paragraph.innerHTML)
+
         var paragraph2 = document.getElementById("second-get-out")
         paragraph2.innerHTML = haunt.getOut(paragraph2.innerHTML, "blood")
+
+        var paragraph3 = document.getElementById("reverse-this")
+        paragraph3.innerHTML = haunt.reverseWord(paragraph3.innerHTML, "murder")
       }
     </script>
 
@@ -23,5 +27,6 @@
   <body>
   <p id="first-get-out"> Get over here.  </p>
   <p id="second-get-out"> Get over here.  </p>
+  <p id="reverse-this"> meat is murder  </p>
   </body>
 </html>
