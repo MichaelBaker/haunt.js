@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Example</title>
+    <script type="text/javascript" src="../lib/haunt.js"></script>
+    <script>
+      window.onload = function() {
+        var paragraph = document.getElementById("first-get-out")
+        paragraph.innerHTML = haunt.styledGetOut(paragraph.innerHTML)
+        var paragraph2 = document.getElementById("second-get-out")
+        paragraph2.innerHTML = haunt.getOut(paragraph2.innerHTML, "blood")
+      }
+    </script>
+
+    <style>
+    .blood {
+      color: red;
+    }
+    </style>
+  </head>
+  <body>
+  <p id="first-get-out"> Get over here.  </p>
+  <p id="second-get-out"> Get over here.  </p>
+  </body>
+</html>
