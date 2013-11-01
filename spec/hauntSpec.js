@@ -23,6 +23,11 @@ describe("haunt", function() {
       expect(haunt.getOut("hello get get.")).toEqual("hello get out get.")
     })
 
+    it("skips get out", function() {
+      expect(haunt.getOut("hello get out")).toEqual("hello get out")
+      expect(haunt.getOut("hello get out get")).toEqual("hello get out get out")
+    })
+
     describe("getOut with text styling", function() {
       it("would create a span with class with the word", function() {
         expect(haunt.getOut("get my sandwich", "spooky-word")).toEqual("<span class='spooky-word'>get out</span> my sandwich")
