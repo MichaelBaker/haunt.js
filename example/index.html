@@ -16,6 +16,8 @@
         paragraph2.innerHTML = haunt.getOut(paragraph2.innerHTML, "blood")
 
         var paragraph3 = document.getElementById("reverse-this")
+        paragraph3.innerHTML = paragraph3.innerHTML + haunt.bumpElementRight("This is some text")
+        paragraph3.innerHTML = paragraph3.innerHTML + haunt.bumpElementLeft("This is some text")
         paragraph3.innerHTML = haunt.reverseWord(paragraph3.innerHTML, "murder")
       }
     </script>
